@@ -75,5 +75,8 @@
   "prettier": "@specdest-company/tool_config_prettier",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8"
   }
 }
