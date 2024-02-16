@@ -77,6 +77,9 @@ dependencies:
   eslint-plugin-simple-import-sort:
     specifier: 10.0.0
     version: 10.0.0(eslint@8.56.0)
+  eslint-plugin-sort-keys-fix:
+    specifier: 1.1.2
+    version: 1.1.2
   eslint-plugin-testing-library:
     specifier: 6.2.0
     version: 6.2.0(eslint@8.56.0)(typescript@5.3.3)
@@ -94,9 +97,6 @@ devDependencies:
   '@specdest-company/tool_config_prettier':
     specifier: github:specdest-company/tool_config_prettier#v0.0.3
     version: git@github.com+specdest-company/tool_config_prettier/89d975d0bdb0b38c1623ca787eddd8f4a06f6219(prettier@3.2.5)
-  '@specdest-company/tool_config_typescript':
-    specifier: github:specdest-company/tool_config_typescript#v0.0.1
-    version: git/github.com+specdest-company/tool_config_typescript/9a99cf4bda31743d4216fd3883b4f802ee8f935d
   '@types/node':
     specifier: 20.10.5
     version: 20.10.5
@@ -115,9 +115,6 @@ devDependencies:
   cz-conventional-changelog:
     specifier: 3.3.0
     version: 3.3.0(@types/node@20.10.5)(typescript@5.3.3)
-  eslint-plugin-sort-keys-fix:
-    specifier: 1.1.2
-    version: 1.1.2
   husky:
     specifier: 9.0.11
     version: 9.0.11
@@ -2132,7 +2129,7 @@ packages:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       acorn: 7.4.1
-    dev: true
+    dev: false
 
   /acorn-jsx@5.3.2(acorn@8.11.3):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2146,7 +2143,7 @@ packages:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
+    dev: false
 
   /acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
@@ -3795,7 +3792,7 @@ packages:
       esutils: 2.0.3
       natural-compare: 1.4.0
       requireindex: 1.2.0
-    dev: true
+    dev: false
 
   /eslint-plugin-testing-library@5.11.1(eslint@8.56.0)(typescript@5.3.3):
     resolution: {integrity: sha512-5eX9e1Kc2PqVRed3taaLnAAqPZGEX75C+M/rXzUAI3wIg/ZxzUm1OVAwfe/O+vE+6YXOLetSe9g5GKD2ecXipw==}
@@ -3851,6 +3848,7 @@ packages:
   /eslint-visitor-keys@1.3.0:
     resolution: {integrity: sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==}
     engines: {node: '>=4'}
+    dev: false
 
   /eslint-visitor-keys@2.1.0:
     resolution: {integrity: sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==}
@@ -3916,7 +3914,7 @@ packages:
       acorn: 7.4.1
       acorn-jsx: 5.3.2(acorn@7.4.1)
       eslint-visitor-keys: 1.3.0
-    dev: true
+    dev: false
 
   /espree@9.6.1:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
@@ -3960,6 +3958,7 @@ packages:
   /esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
+    dev: false
 
   /expand-tilde@2.0.2:
     resolution: {integrity: sha512-A5EmesHW6rfnZ9ysHQjPdJRni0SRar0tjtG5MNtm9n5TUvsYU8oozprtRD4AqHxcZWWlVuAmQo2nWKfN9oyjTw==}
@@ -5107,6 +5106,7 @@ packages:
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
 
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
@@ -5698,6 +5698,7 @@ packages:
   /requireindex@1.2.0:
     resolution: {integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==}
     engines: {node: '>=0.10.5'}
+    dev: false
 
   /resolve-dir@1.0.1:
     resolution: {integrity: sha512-R7uiTjECzvOsWSfdM0QKFNBVFcK27aHOUwdvK53BcW8zqnGdYp0Fbj82cy54+2A4P2tFM22J5kRfe1R+lM/1yg==}
@@ -6525,7 +6526,7 @@ packages:
     name: '@specdest-company/tool_config_prettier'
     version: 0.0.3
     dependencies:
-      '@specdest-company/tool_config_typescript': git@github.com+specdest-company/tool_config_typescript/9a99cf4bda31743d4216fd3883b4f802ee8f935d
+      '@specdest-company/tool_config_typescript': git/github.com+specdest-company/tool_config_typescript/9a99cf4bda31743d4216fd3883b4f802ee8f935d
       prettier-plugin-tailwindcss: 0.5.9(prettier@3.2.5)
     transitivePeerDependencies:
       - '@ianvs/prettier-plugin-sort-imports'
@@ -6543,10 +6544,4 @@ packages:
       - prettier-plugin-style-order
       - prettier-plugin-svelte
       - prettier-plugin-twig-melody
-    dev: true
-
-  git@github.com+specdest-company/tool_config_typescript/9a99cf4bda31743d4216fd3883b4f802ee8f935d:
-    resolution: {commit: 9a99cf4bda31743d4216fd3883b4f802ee8f935d, repo: git@github.com:specdest-company/tool_config_typescript.git, type: git}
-    name: '@specdest-company/tool_config_typescript'
-    version: 0.0.1
     dev: true

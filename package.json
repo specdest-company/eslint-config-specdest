@@ -1,5 +1,5 @@
 {
-  "name": "@specdest-company/tool_config_eslint",
+  "name": "@specdest-company/eslint-config-specdest",
   "version": "0.0.1",
   "main": "index.js",
   "private": true,
@@ -43,20 +43,19 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-testing-library": "6.2.0",
+    "eslint-plugin-sort-keys-fix": "1.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslint": "6.1.3"
   },
   "devDependencies": {
     "@specdest-company/tool_config_prettier": "github:specdest-company/tool_config_prettier#v0.0.3",
-    "@specdest-company/tool_config_typescript": "github:specdest-company/tool_config_typescript#v0.0.1",
     "@types/node": "20.10.5",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
     "commitizen": "4.3.0",
     "conventional-changelog-cli": "4.1.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint-plugin-sort-keys-fix": "1.1.2",
     "husky": "9.0.11",
     "prettier": "3.2.5",
     "standard-version": "9.5.0",
