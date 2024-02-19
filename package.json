@@ -9,14 +9,13 @@
     "./react.js"
   ],
   "scripts": {
+    "check-diff": "git diff --quiet HEAD -- || (echo 'Uncommitted changes detected! Please commit or stash them before releasing.' && exit 1)",
     "clean": "rm -rf .turbo node_modules pnpm-lock.yaml",
     "commit": "cz",
     "fmt": "prettier --check \"**/*.{mjs,ts,md,json}\"",
     "fmt:fix": "pnpm fmt -w",
-    "postinstall": "pnpx sort-package-json",
     "prepare": "husky",
     "release": "pnpm run check-diff && echo \"No uncommitted changes\" && pnpm run version && git push --follow-tags",
-    "check-diff": "git diff --quiet HEAD -- || (echo 'Uncommitted changes detected! Please commit or stash them before releasing.' && exit 1)",
     "version": "standard-version"
   },
   "config": {
