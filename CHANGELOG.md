@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.5...v0.0.6) (2024-02-19)
+
+
+### Bug Fixes
+
+* removed post install script" ([c5ec7e7](https://github.com/specdest-company/eslint-config-specdest/commit/c5ec7e7d0e646414222f60a292ea79aa142fc03b))
+
 ### [0.0.5](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.4...v0.0.5) (2024-02-19)
 
 
