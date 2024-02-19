@@ -22,7 +22,7 @@ const mainRules = {
     "error",
     {
       devDependencies: ["**/*.test.js", "**/*.spec.js", "**/*.test.ts"],
-      packageDir: [".", "../..", "../../packages/ui"], // <--- the key addition
+      // packageDir: [".", "../..", "../../packages/ui"], // <--- the key addition
     },
   ],
   "no-await-in-loop": "error",
@@ -73,7 +73,7 @@ const mainRules = {
       alphabetize: {
         order: "asc",
       },
-      "newlines-between": "always",
+      "newlines-between": "ignore",
     },
   ],
   "no-multiple-empty-lines": "error",
