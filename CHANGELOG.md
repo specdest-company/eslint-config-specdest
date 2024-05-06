@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.6...v0.0.7) (2024-05-06)
+
+
+### Bug Fixes
+
+* pacakge name ([524b547](https://github.com/specdest-company/eslint-config-specdest/commit/524b547d3748f3f8f8384d5911ce3956c4183db2))
+
 ### [0.0.6](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.5...v0.0.6) (2024-02-19)
 
 
