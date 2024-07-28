@@ -2,7 +2,7 @@ eslint config
 
 # Usage
 
-`pnpm install git+https://github.com/specdest-company/tool_config_eslint.git#v0.0.4 -D`
+`pnpm install git+https://github.com/specdest-company/tool_config_eslint.git#v0.0.8 -D`
 
 # Contribution
 

@@ -1,3 +1,14 @@
+import globals from "globals";
+import js from "@eslint/js";
+import turbo from "eslint-config-turbo";
+import airbnb from "eslint-config-airbnb";
+import airbnbTypescript from "eslint-config-airbnb-typescript";
+import importPlugin from "eslint-plugin-import";
+import prettier from "eslint-config-prettier";
+import tsParser from "@typescript-eslint/parser";
+import tsEslint from "typescript-eslint";
+import pluginReact from "eslint-plugin-react";
+
 /** @type {import("eslint").Linter.Config} */
 const mainRules = {
   // "arrow-parens": ["error", "as-needed"],
@@ -199,38 +210,81 @@ const mainSettings = {
     },
   },
 };
-module.exports = {
-  env: {
-    es2022: true,
-    browser: true,
-    node: true,
-    jest: true,
+/** @type {import("eslint").Linter.Config} */
+const baseConfig = {
+  // env: {
+  //   es2022: true,
+  //   browser: true,
+  //   node: true,
+  //   jest: true,
+  // },
+  // globals: {
+  //   React: true,
+  //   google: true,
+  //   mount: true,
+  //   mountWithRouter: true,
+  //   shallow: true,
+  //   shallowWithRouter: true,
+  //   context: true,
+  //   expect: true,
+  //   jsdom: true,
+  //   JSX: true,
+  // },
+
+  languageOptions: {
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+    },
+    globals: {
+      ...globals.browser,
+      myCustomGlobal: "readonly",
+    },
+    parser: tsParser,
   },
-  globals: {
-    React: true,
-    google: true,
-    mount: true,
-    mountWithRouter: true,
-    shallow: true,
-    shallowWithRouter: true,
-    context: true,
-    expect: true,
-    jsdom: true,
-    JSX: true,
-  },
-  extends: [
-    "turbo",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked",
-    "plugin:@typescript-eslint/recommended",
-    "airbnb",
-    "airbnb-typescript",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "prettier",
-  ],
-  ignorePatterns: [
+  // extends: [
+  //   "turbo",
+  //   "eslint:recommended",
+  //   "plugin:@typescript-eslint/recommended-type-checked",
+  //   "plugin:@typescript-eslint/stylistic-type-checked",
+  //   "plugin:@typescript-eslint/recommended",
+  //   "airbnb",
+  //   "airbnb-typescript",
+  //   "plugin:import/recommended",
+  //   "plugin:import/typescript",
+  //   "prettier",
+  // ],
+
+  // turbo,
+  js.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  ...tsEslint.configs.recommendedTypeChecked,
+  ...tsEslint.configs.strictTypeChecked,
+  ...tsEslint.configs.stylisticTypeChecked,
+  // airbnbTypescript,
+  // importPlugin.configs.recommended,
+  // importPlugin.configs.typescript,
+  // prettier,
+
+  // ignorePatterns: [
+  //   "**/.eslintrc.cjs",
+  //   "**/*.config.js",
+  //   "**/*.config.cjs",
+  //   "**/*.test.ts",
+  //   "**/*.test.tsx",
+  //   ".next",
+  //   "dist",
+  //   "pnpm-lock.yaml",
+  //   "**/*.js",
+  //   "**/*.json",
+  //   "node_modules",
+  //   "public",
+  //   "styles",
+  //   "coverage",
+  //   ".turbo",
+  // ],
+  ignores: [
     "**/.eslintrc.cjs",
     "**/*.config.js",
     "**/*.config.cjs",
@@ -247,7 +301,7 @@ module.exports = {
     "coverage",
     ".turbo",
   ],
-  parser: "@typescript-eslint/parser",
+  // parser: "@typescript-eslint/parser",
 
   settings: mainSettings,
   parserOptions: {
@@ -279,3 +333,7 @@ module.exports = {
     },
   ],
 };
+export default [
+  {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
+  baseConfig
+];
