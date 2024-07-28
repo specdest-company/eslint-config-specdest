@@ -3,10 +3,22 @@ import js from "@eslint/js";
 import turbo from "eslint-config-turbo";
 import airbnb from "eslint-config-airbnb";
 import airbnbTypescript from "eslint-config-airbnb-typescript";
-import importPlugin from "eslint-plugin-import";
 import prettier from "eslint-config-prettier";
-import tsParser from "@typescript-eslint/parser";
+// import tsParser from "@typescript-eslint/parser";
 import tsEslint from "typescript-eslint";
+import tsParser1 from "typescript-eslint";
+
+import importPlugin from "eslint-plugin-import";
+import turboPlugin from "eslint-plugin-turbo";
+
+import simpleImportPlugin from "eslint-plugin-simple-import-sort";
+// import typescriptEslintPlugin from "@typescript-eslint";
+// import tslintPlugin from "@typescript-eslint/tslint";
+import importPlugin1 from "eslint-plugin-import";
+import boundariesPlugin from "eslint-plugin-boundaries";
+import sortKeysFixPlugin from "eslint-plugin-sort-keys-fix";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+
 import pluginReact from "eslint-plugin-react";
 
 /** @type {import("eslint").Linter.Config} */
@@ -29,13 +41,14 @@ const mainRules = {
   "max-nested-callbacks": ["error", 3],
   "max-params": ["error", 4],
   "max-depth": ["error", 4],
-  "import/no-extraneous-dependencies": [
-    "error",
-    {
-      devDependencies: ["**/*.test.js", "**/*.spec.js", "**/*.test.ts"],
-      // packageDir: [".", "../..", "../../packages/ui"], // <--- the key addition
-    },
-  ],
+  // TODO:
+  // "import/no-extraneous-dependencies": [
+  //   "error",
+  //   {
+  //     devDependencies: ["**/*.test.js", "**/*.spec.js", "**/*.test.ts"],
+  //     // packageDir: [".", "../..", "../../packages/ui"], // <--- the key addition
+  //   },
+  // ],
   "no-await-in-loop": "error",
   "no-cond-assign": "error",
   "no-irregular-whitespace": "error",
@@ -53,40 +66,41 @@ const mainRules = {
   "no-new": "error",
   "no-plusplus": "error",
   // 'import/no-default-export': ['error'],
-  "import/prefer-default-export": "off",
-  "@typescript-eslint/no-unsafe-assignment": "off",
-  "import/extensions": ["error", "never", { svg: "always" }],
-  "import/order": [
-    "error",
-    {
-      groups: [
-        "builtin",
-        "external",
-        "parent",
-        "sibling",
-        "index",
-        "object",
-        "type",
-      ],
-      pathGroups: [
-        {
-          pattern: "{react,react-dom/**,react-router-dom}",
-          group: "builtin",
-          position: "before",
-        },
-        {
-          pattern: "@src/**",
-          group: "parent",
-          position: "before",
-        },
-      ],
-      pathGroupsExcludedImportTypes: ["builtin"],
-      alphabetize: {
-        order: "asc",
-      },
-      "newlines-between": "ignore",
-    },
-  ],
+  // TODO:
+  // "import/prefer-default-export": "off",
+  // "import/extensions": ["error", "never", { svg: "always" }],
+  // "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+  // "import/order": [
+  //   "error",
+  //   {
+  //     groups: [
+  //       "builtin",
+  //       "external",
+  //       "parent",
+  //       "sibling",
+  //       "index",
+  //       "object",
+  //       "type",
+  //     ],
+  //     pathGroups: [
+  //       {
+  //         pattern: "{react,react-dom/**,react-router-dom}",
+  //         group: "builtin",
+  //         position: "before",
+  //       },
+  //       {
+  //         pattern: "@src/**",
+  //         group: "parent",
+  //         position: "before",
+  //       },
+  //     ],
+  //     pathGroupsExcludedImportTypes: ["builtin"],
+  //     alphabetize: {
+  //       order: "asc",
+  //     },
+  //     "newlines-between": "ignore",
+  //   },
+  // ],
   "no-multiple-empty-lines": "error",
 
   // react
@@ -100,12 +114,15 @@ const mainRules = {
   "react/require-default-props": "off",
   "react/prop-types": "warn",
   "react/jsx-props-no-spreading": "off",
-  "jsx-a11y/control-has-associated-label": "warn",
-  "jsx-a11y/no-static-element-interactions": "warn",
-  "jsx-a11y/click-events-have-key-events": "warn",
-  "react-hooks/rules-of-hooks": "error",
-  "react-hooks/exhaustive-deps": "warn",
+  // TODO:
+  // "jsx-a11y/control-has-associated-label": "warn",
+  // "jsx-a11y/no-static-element-interactions": "warn",
+  // "jsx-a11y/click-events-have-key-events": "warn",
+  // "jsx-a11y/img-redundant-alt": "warn",
+  // "react-hooks/rules-of-hooks": "error",
+  // "react-hooks/exhaustive-deps": "warn",
   "react/jsx-pascal-case": ["error", { allowNamespace: true }],
+  "@typescript-eslint/no-unsafe-assignment": "off",
   // "react/forbid-elements": [
   //   "error",
   //   {
@@ -120,10 +137,7 @@ const mainRules = {
   //     ],
   //   },
   // ],
-  "jsx-a11y/img-redundant-alt": "warn",
   "react/no-unescaped-entities": "off",
-  "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-  "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
 
   // typescript
   "@typescript-eslint/no-unused-expressions": ["error"],
@@ -191,8 +205,8 @@ const mainRules = {
     "error",
     { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
   ],
-  "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
-  "sort-keys-fix/sort-keys-fix": "warn",
+  // TODO:
+  // "sort-keys-fix/sort-keys-fix": "warn",
   "turbo/no-undeclared-env-vars": "off",
   "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
 };
@@ -212,7 +226,31 @@ const mainSettings = {
 };
 /** @type {import("eslint").Linter.Config} */
 const baseConfig = {
-  files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+  // extends: [
+  //   "turbo",
+  //   "eslint:recommended",
+  //   "plugin:@typescript-eslint/recommended-type-checked",
+  //   "plugin:@typescript-eslint/stylistic-type-checked",
+  //   "plugin:@typescript-eslint/recommended",
+  //   "airbnb",
+  //   "airbnb-typescript",
+  //   "plugin:import/recommended",
+  //   "plugin:import/typescript",
+  //   "prettier",
+  // ],
+  // ...turbo,
+  // ...js.configs.recommended,
+  // ...pluginReact.configs.flat.recommended,
+  // ...tsEslint.configs.recommendedTypeChecked,
+  // ...tsEslint.configs.strictTypeChecked,
+  // ...tsEslint.configs.stylisticTypeChecked,
+  // ...airbnbTypescript,
+  // ...importPlugin.configs.recommended,
+  // ...importPlugin.configs.typescript,
+  // ...prettier,
+
+  // files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+
   // env: {
   //   es2022: true,
   //   browser: true,
@@ -237,35 +275,16 @@ const baseConfig = {
       ecmaFeatures: {
         jsx: true,
       },
+      project: true,
+      tsconfigRootDir: import.meta.dirname,
     },
     globals: {
       ...globals.browser,
       myCustomGlobal: "readonly",
     },
-    parser: tsParser,
+    parser: tsEslint.parser,
   },
-  // extends: [
-  //   "turbo",
-  //   "eslint:recommended",
-  //   "plugin:@typescript-eslint/recommended-type-checked",
-  //   "plugin:@typescript-eslint/stylistic-type-checked",
-  //   "plugin:@typescript-eslint/recommended",
-  //   "airbnb",
-  //   "airbnb-typescript",
-  //   "plugin:import/recommended",
-  //   "plugin:import/typescript",
-  //   "prettier",
-  // ],
-  turbo,
-  ...js.configs.recommended,
-  ...pluginReact.configs.flat.recommended,
-  ...tsEslint.configs.recommendedTypeChecked,
-  ...tsEslint.configs.strictTypeChecked,
-  ...tsEslint.configs.stylisticTypeChecked,
-  ...airbnbTypescript,
-  ...importPlugin.configs.recommended,
-  ...importPlugin.configs.typescript,
-  ...prettier,
+
   // ignorePatterns: [
   //   "**/.eslintrc.cjs",
   //   "**/*.config.js",
@@ -302,33 +321,73 @@ const baseConfig = {
   ],
   // parser: "@typescript-eslint/parser",
   settings: mainSettings,
-  parserOptions: {
-    project: true,
+  // plugins: [
+  //   "simple-import-sort",
+  //   "@typescript-eslint",
+  //   "@typescript-eslint/tslint",
+  //   "import",
+  //   "boundaries",
+  //   "sort-keys-fix",
+  //   "react-hooks",
+  // ],
+  plugins: {
+    simpleImportPlugin,
+    // typescriptEslintPlugin,
+    // tslintPlugin,
+    importPlugin,
+    boundariesPlugin,
+    sortKeysFixPlugin,
+    reactHooksPlugin,
+    turboPlugin,
   },
-  plugins: [
-    "simple-import-sort",
-    "@typescript-eslint",
-    "@typescript-eslint/tslint",
-    "import",
-    "boundaries",
-    "sort-keys-fix",
-    "react-hooks",
-  ],
   rules: mainRules,
-  overrides: [
-    {
-      files: [
-        "**/app/**/route.ts",
-        "**/app/**/page.tsx",
-        "**/app/**/layout.tsx",
-        "**/src/**/middleware.ts",
-      ],
-      rules: {
-        ...mainRules,
-        "react/function-component-definition": [0],
-        "func-style": [0],
+  // overrides: [
+  //   {
+  //     files: [
+  //       "**/app/**/route.ts",
+  //       "**/app/**/page.tsx",
+  //       "**/app/**/layout.tsx",
+  //       "**/src/**/middleware.ts",
+  //     ],
+  //     rules: {
+  //       ...mainRules,
+  //       "react/function-component-definition": [0],
+  //       "func-style": [0],
+  //     },
+  //   },
+  // ],
+};
+
+export default tsEslint.config(
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  baseConfig,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: true,
       },
     },
-  ],
-};
-export default baseConfig;
+  },
+  ...tsEslint.configs.recommendedTypeChecked,
+  js.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  ...tsEslint.configs.strictTypeChecked,
+  ...tsEslint.configs.stylisticTypeChecked,
+  // airbnbTypescript,
+  // importPlugin.configs.recommended,
+  // importPlugin.configs.typescript,
+  // prettier,
+  {
+    files: [
+      "**/app/**/route.ts",
+      "**/app/**/page.tsx",
+      "**/app/**/layout.tsx",
+      "**/src/**/middleware.ts",
+    ],
+    rules: {
+      ...mainRules,
+      "react/function-component-definition": [0],
+      "func-style": [0],
+    },
+  },
+);

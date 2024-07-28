@@ -1,3 +1,3 @@
 import base from "./index.js";
 
-export default [base];
+export default [...base];

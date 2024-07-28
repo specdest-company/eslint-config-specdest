@@ -1,0 +1,24 @@
+{
+  "exclude": ["node_modules", "*.config.js"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "assets/*": ["./assets/*"]
+    },
+    "allowJs": true,
+    "jsx": "react-native",
+    "types": ["nativewind/types", "./src/types/index.d.ts", "webpack-env"]
+  },
+  "include": [
+    "expo-plugins",
+    "src",
+    "*.ts",
+    "**/*.js",
+    "index.tsx",
+    "src/screens/auth/.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "eslint.config.mjs"
+  ]
+}
