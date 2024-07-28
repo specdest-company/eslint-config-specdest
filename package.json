@@ -16,7 +16,8 @@
     "fmt:fix": "pnpm fmt -w",
     "prepare": "husky",
     "release": "pnpm run check-diff && echo \"No uncommitted changes\" && pnpm run version && git push --follow-tags && npm publish --access public",
-    "version": "standard-version"
+    "version": "standard-version",
+    "lint-try": "eslint __eslint_tests__ --report-unused-disable-directives"
   },
   "config": {
     "commitizen": {

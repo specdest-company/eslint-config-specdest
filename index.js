@@ -212,6 +212,7 @@ const mainSettings = {
 };
 /** @type {import("eslint").Linter.Config} */
 const baseConfig = {
+  files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
   // env: {
   //   es2022: true,
   //   browser: true,
@@ -255,18 +256,16 @@ const baseConfig = {
   //   "plugin:import/typescript",
   //   "prettier",
   // ],
-
-  // turbo,
-  js.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  turbo,
+  ...js.configs.recommended,
+  ...pluginReact.configs.flat.recommended,
   ...tsEslint.configs.recommendedTypeChecked,
   ...tsEslint.configs.strictTypeChecked,
   ...tsEslint.configs.stylisticTypeChecked,
-  // airbnbTypescript,
-  // importPlugin.configs.recommended,
-  // importPlugin.configs.typescript,
-  // prettier,
-
+  ...airbnbTypescript,
+  ...importPlugin.configs.recommended,
+  ...importPlugin.configs.typescript,
+  ...prettier,
   // ignorePatterns: [
   //   "**/.eslintrc.cjs",
   //   "**/*.config.js",
@@ -302,7 +301,6 @@ const baseConfig = {
     ".turbo",
   ],
   // parser: "@typescript-eslint/parser",
-
   settings: mainSettings,
   parserOptions: {
     project: true,
@@ -333,7 +331,4 @@ const baseConfig = {
     },
   ],
 };
-export default [
-  {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
-  baseConfig
-];
+export default baseConfig;
