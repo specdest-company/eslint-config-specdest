@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.8...v0.0.9) (2024-07-28)
+
+
+### Bug Fixes
+
+* lint command ([dbc6005](https://github.com/specdest-company/eslint-config-specdest/commit/dbc60053ff3fbb2db98a0c5a4e1dbae7c85ebf4b))
+
 ### [0.0.8](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.7...v0.0.8) (2024-07-28)
 
 
