@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.7...v0.0.8) (2024-07-28)
+
+
+### Features
+
+* eslitn 9 ([13366a7](https://github.com/specdest-company/eslint-config-specdest/commit/13366a7a1f233fc7a1b69de3444aa32981b7692c))
+
 ### [0.0.7](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.6...v0.0.7) (2024-05-06)
 
 
