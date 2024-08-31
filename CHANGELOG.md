@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.10...v0.0.11) (2024-08-31)
+
+
+### Bug Fixes
+
+* removed turbo dependency ([45dd494](https://github.com/specdest-company/eslint-config-specdest/commit/45dd494e04b58b65539d73eafe0dcd1f4198133a))
+
 ### [0.0.10](https://github.com/specdest-company/eslint-config-specdest/compare/v0.0.9...v0.0.10) (2024-07-28)
 
 
