@@ -1,6 +1,6 @@
 import globals from "globals";
 import js from "@eslint/js";
-import turbo from "eslint-config-turbo";
+// import turbo from "eslint-config-turbo";
 import airbnb from "eslint-config-airbnb";
 import airbnbTypescript from "eslint-config-airbnb-typescript";
 import prettier from "eslint-config-prettier";
@@ -9,7 +9,7 @@ import tsEslint from "typescript-eslint";
 import tsParser1 from "typescript-eslint";
 
 import importPlugin from "eslint-plugin-import";
-import turboPlugin from "eslint-plugin-turbo";
+// import turboPlugin from "eslint-plugin-turbo";
 
 import simpleImportPlugin from "eslint-plugin-simple-import-sort";
 // import typescriptEslintPlugin from "@typescript-eslint";
@@ -197,17 +197,19 @@ const mainRules = {
       prefer: "type-imports",
     },
   ],
-  "@typescript-eslint/no-misused-promises": [
-    2,
-    { checksVoidReturn: { attributes: false } },
-  ],
+
+  "@typescript-eslint/no-floating-promises": "error",
+  // "@typescript-eslint/no-misused-promises": [
+  //   2,
+  //   { checksVoidReturn: { attributes: false } },
+  // ],
   "@typescript-eslint/no-unused-vars": [
     "error",
     { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
   ],
   // TODO:
   // "sort-keys-fix/sort-keys-fix": "warn",
-  "turbo/no-undeclared-env-vars": "off",
+  // "turbo/no-undeclared-env-vars": "off",
   "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
 };
 const mainSettings = {
