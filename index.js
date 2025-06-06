@@ -155,7 +155,7 @@ const mainRules = {
   ],
   // TODO:
   "sort-keys-fix/sort-keys-fix": "warn",
-  "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+  "@typescript-eslint/consistent-type-definitions": ["error", "type"],
   "@typescript-eslint/restrict-template-expressions": [
     "error",
     {
