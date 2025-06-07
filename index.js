@@ -17,7 +17,7 @@ import pluginReact from "eslint-plugin-react";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
+ 
 const compat = new FlatCompat({
   baseDirectory: __dirname, // optional; default: process.cwd()
   resolvePluginsRelativeTo: __dirname, // optional
@@ -31,6 +31,7 @@ const mainRules = {
   "object-shorthand": ["error", "always"],
 
   // js
+  semi: ["error", "always"],
   eqeqeq: ["error", "always"],
   "no-console": ["error", { allow: ["warn", "error"] }],
   "no-undef": "error",
@@ -57,7 +58,6 @@ const mainRules = {
   "no-floating-decimal": "error",
   "no-nested-ternary": "error",
   "no-new": "error",
-  "no-plusplus": "error",
   "no-multiple-empty-lines": "error",
 
   // react
@@ -257,12 +257,12 @@ export default tsEslint.config(
   },
   ...tsEslint.configs.recommendedTypeChecked,
   js.configs.recommended,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+   
   pluginReact.configs.flat.recommended,
   ...tsEslint.configs.strictTypeChecked,
   ...tsEslint.configs.stylisticTypeChecked,
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+   
   prettier,
   baseConfig,
   {
